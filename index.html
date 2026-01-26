@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -28,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* صورة الخلفية المميزة */
         .background-image {
             position: fixed;
             top: 0;
@@ -42,7 +42,6 @@
             z-index: -2;
         }
 
-        /* طبقة تظليل فوق الخلفية */
         .background-overlay {
             position: fixed;
             top: 0;
@@ -53,7 +52,6 @@
             z-index: -1;
         }
 
-        /* تأثيرات زخرفية إضافية */
         .background-decoration {
             position: fixed;
             top: 0;
@@ -136,6 +134,7 @@
             border: 2px solid rgba(139, 78, 61, 0.1);
             position: relative;
             overflow: hidden;
+            min-height: 90px;
         }
 
             .link-item:hover {
@@ -173,6 +172,7 @@
         .link-content {
             text-align: right;
             flex-grow: 1;
+            min-width: 0;
         }
 
         .link-title {
@@ -185,6 +185,10 @@
         .link-desc {
             font-size: 12px;
             color: rgba(139, 78, 61, 0.7);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .link-arrow {
@@ -194,224 +198,83 @@
             opacity: 0.7;
         }
 
-        /* تأثير إضافي للروابط */
-        .link-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(139, 78, 61, 0) 0%, rgba(139, 78, 61, 0.05) 100%);
-            z-index: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .link-item:hover::before {
-            opacity: 1;
-        }
-
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(139, 78, 61, 0.1);
-            color: rgba(139, 78, 61, 0.7);
-            font-size: 15px;
-        }
-
-        .qr-note {
-            display: inline-block;
-            background-color: rgba(139, 78, 61, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin-top: 10px;
-            font-size: 14px;
-        }
-
-        /* تأثيرات للهواتف المحمولة */
         @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .logo {
-                width: 140px;
-                height: 140px;
-            }
-
-                .logo img {
-                    width: 200px;
-                    height: 200px;
-                }
-
-            .logo-text {
-                font-size: 24px;
-            }
-
-            .link-item {
-                padding: 15px;
+            .link-desc {
+                -webkit-line-clamp: 3;
             }
 
             .link-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-                margin-left: 15px;
-            }
-
-            .link-title {
-                font-size: 15px;
-            }
-
-            .background-image {
-                background-image: url('img/10.jpg');
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                width: 150px;
-                height: 150px;
-            }
-
-                .logo img {
-                    width: 200px;
-                    height: 200px;
-                }
-
-            .link-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-
-            .link-icon {
-                margin-left: 0;
-                margin-bottom: 15px;
+                margin-left: 5px;
             }
 
             .link-arrow {
-                display: none;
+                margin-right: 5px;
             }
-        }
+            }
+
+            @media (max-width: 480px) {
+                .link-desc {
+                    -webkit-line-clamp: 3;
+                }
+
+                .link-icon {
+                    margin-left: 5px;
+                }
+
+                .link-arrow {
+                    margin-right: 5px;
+                }
+            }
     </style>
 </head>
+
 <body>
-    <!-- صورة الخلفية المميزة -->
+
     <div class="background-image"></div>
-
-    <!-- طبقة تظليل -->
     <div class="background-overlay"></div>
-
-    <!-- تأثيرات زخرفية إضافية -->
     <div class="background-decoration"></div>
 
-    <!-- المحتوى الرئيسي -->
     <div class="container">
-        <!-- الشعار -->
+
         <div class="logo-container">
             <div class="logo">
-                <img src="img/Artboard 4 copy.png"></img>
+                <img src="img/Artboard 4 copy.png">
             </div>
             <h1 class="logo-text">روابط التواصل الاجتماعي</h1>
             <p class="subtitle">تابعنا على منصات التواصل الاجتماعي للاطلاع على آخر أخبارنا وعروضنا</p>
         </div>
 
-        <!-- الروابط -->
         <div class="links-container">
-            <!-- رابط الموقع -->
+
             <a href="https://icledu.com" target="_blank" class="link-item website">
                 <div class="link-content">
                     <h3 class="link-title">الموقع الإلكتروني</h3>
                     <p class="link-desc">زوروا موقعنا للحجز للتعرف على خدماتنا</p>
                 </div>
-                <div class="link-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="link-arrow">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
+                <div class="link-icon"><i class="fas fa-globe"></i></div>
+                <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
             </a>
 
-            <!-- رابط الفيسبوك -->
             <a href="https://www.facebook.com/IntlLanguageCollegeLibya/" target="_blank" class="link-item facebook">
                 <div class="link-content">
                     <h3 class="link-title">صفحة الفيسبوك</h3>
                     <p class="link-desc">تابعونا على فيسبوك لمعرفة آخر التحديثات والعروض</p>
                 </div>
-                <div class="link-icon">
-                    <i class="fab fa-facebook-f"></i>
-                </div>
-                <div class="link-arrow">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
+                <div class="link-icon"><i class="fab fa-facebook-f"></i></div>
+                <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
             </a>
 
-            <!-- رابط الواتساب -->
             <a href="https://wa.me/218913504510" target="_blank" class="link-item whatsapp">
                 <div class="link-content">
                     <h3 class="link-title">الواتساب</h3>
                     <p class="link-desc">تواصلوا معنا عبر الواتساب للاستفسارات والخدمات</p>
                 </div>
-                <div class="link-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <div class="link-arrow">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
+                <div class="link-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
             </a>
+
         </div>
     </div>
 
-    <script>
-        // إضافة تأثيرات تفاعلية
-        document.addEventListener('DOMContentLoaded', function () {
-            const links = document.querySelectorAll('.link-item');
-
-            links.forEach(link => {
-                link.addEventListener('mouseenter', function () {
-                    const icon = this.querySelector('.link-icon i');
-                    icon.style.transform = 'scale(1.1) rotate(5deg)';
-                    icon.style.transition = 'transform 0.3s ease';
-
-                    // تأثير اهتزاز خفيف للسهم
-                    const arrow = this.querySelector('.link-arrow i');
-                    if (arrow) {
-                        arrow.style.transform = 'translateX(-5px)';
-                        arrow.style.transition = 'transform 0.3s ease';
-                    }
-                });
-
-                link.addEventListener('mouseleave', function () {
-                    const icon = this.querySelector('.link-icon i');
-                    icon.style.transform = 'scale(1) rotate(0deg)';
-
-                    const arrow = this.querySelector('.link-arrow i');
-                    if (arrow) {
-                        arrow.style.transform = 'translateX(0)';
-                    }
-                });
-            });
-
-            // تأثير للشعار عند التحميل
-            const logo = document.querySelector('.logo');
-            setTimeout(() => {
-                logo.style.transform = 'scale(1.05)';
-                logo.style.transition = 'transform 0.5s ease';
-
-                setTimeout(() => {
-                    logo.style.transform = 'scale(1)';
-                }, 300);
-            }, 500);
-
-            // يمكن تعديل الروابط هنا لتكون الروابط الحقيقية
-            // document.querySelector('.website').href = "رابط الموقع الحقيقي";
-            // document.querySelector('.facebook').href = "رابط الفيسبوك الحقيقي";
-            // document.querySelector('.whatsapp').href = "رابط الواتساب الحقيقي";
-        });
-    </script>
 </body>
-
 </html>
-
