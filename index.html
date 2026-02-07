@@ -188,6 +188,7 @@
         .whatsapp .link-icon {
             background: linear-gradient(135deg, #25D366, #128C7E);
         }
+
         .email .link-icon {
             background: linear-gradient(135deg, #D44638, #B23121);
         }
@@ -196,7 +197,29 @@
             background: linear-gradient(135deg, #000000, #444444);
         }
 
+        .celta {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 18px;
+            font-size: 22px;
+            flex-shrink: 0;
+            color: white;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
 
+        .link-item:hover .celta {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .celta::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
         .link-content {
             text-align: right;
             flex-grow: 1;
@@ -236,25 +259,34 @@
                 margin-right: 5px;
             }
 
+            .celta {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
             .link-arrow {
                 margin-right: 5px;
             }
+        }
+
+        @media (max-width: 480px) {
+            .link-desc {
+                -webkit-line-clamp: 3;
             }
 
-            @media (max-width: 480px) {
-                .link-desc {
-                    -webkit-line-clamp: 3;
-                }
-
-                .link-icon {
-                    margin-left: 5px;
-                    margin-right: 5px;
-                }
-
-                .link-arrow {
-                    margin-right: 5px;
-                }
+            .link-icon {
+                margin-left: 5px;
+                margin-right: 5px;
             }
+            .celta {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            .link-arrow {
+                margin-right: 5px;
+            }
+        }
     </style>
 </head>
 
@@ -270,8 +302,8 @@
             <div class="logo">
                 <img src="img/Artboard 4 copy.png">
             </div>
-            <h1 class="logo-text">روابط التواصل الاجتماعي</h1>
-            <p class="subtitle">تابعنا على منصات التواصل الاجتماعي للاطلاع على آخر أخبارنا وعروضنا</p>
+            <h1 class="logo-text">روابطنا الإلكترونية الرسمية</h1>
+            <p class="subtitle">تابعنا وزُر منصاتنا للاطلاع على أخبارنا وعروضنا</p>
         </div>
 
         <div class="links-container">
@@ -279,7 +311,7 @@
             <a href="https://icledu.com" target="_blank" class="link-item website">
                 <div class="link-content">
                     <h3 class="link-title">الموقع الإلكتروني</h3>
-                    <p class="link-desc">زوروا موقعنا للحجز للتعرف على خدماتنا</p>
+                    <p class="link-desc">زوروا موقعنا الرسمي للتعرّف على البرامج والدورات والتسجيل</p>
                 </div>
                 <div class="link-icon"><i class="fa-solid fa-globe"></i></div>
                 <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
@@ -287,19 +319,28 @@
 
             <a href="https://www.facebook.com/IntlLanguageCollegeLibya/" target="_blank" class="link-item facebook">
                 <div class="link-content">
-                    <h3 class="link-title">صفحة الفيسبوك - فرع الرئيسي</h3>
+                    <h3 class="link-title">صفحة الفيسبوك - فرع الرئيسي زناتة</h3>
+                    <p class="link-desc">تابعونا لمعرفة آخر الأخبار والإعلانات والعروض التعليمية</p>
+                </div>
+                <div class="link-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+            </a>
+
+            <a href="https://www.facebook.com/share/17x697UK4f/?mibextid=wwXIfr" target="_blank" class="link-item facebook">
+                <div class="link-content">
+                    <h3 class="link-title">صفحة الفيسبوك - فرع حي الأندلس</h3>
                     <p class="link-desc">تابعونا على فيسبوك لمعرفة آخر التحديثات والعروض</p>
                 </div>
                 <div class="link-icon"><i class="fa-brands fa-facebook-f"></i></div>
                 <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
             </a>
 
-                        <a href="https://www.facebook.com/share/17x697UK4f/?mibextid=wwXIfr" target="_blank" class="link-item facebook">
+            <a href="https://www.celta-test.com" target="_blank" class="link-item facebook">
                 <div class="link-content">
-                    <h3 class="link-title">صفحة الفيسبوك - فرع حي الأندلس</h3>
-                    <p class="link-desc">تابعونا على فيسبوك لمعرفة آخر التحديثات والعروض</p>
+                    <h3 class="link-title">رابط تسجيل CELTA</h3>
+                    <p class="link-desc">سجّل الآن للالتحاق ببرنامج CELTA المعتمد</p>
                 </div>
-                <div class="link-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                <img src="img/celta.png" class="celta"</img>
                 <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
             </a>
 
@@ -335,4 +376,3 @@
 
 </body>
 </html>
-
